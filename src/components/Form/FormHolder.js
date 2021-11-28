@@ -2,20 +2,21 @@ import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
 import './FormHolder.css';
 
-const FormHolder = () => {
+const FormHolder = props => {
   const usersRegisteredData = [];
 
   const savedRegisteredAccounts = data => {
-    // console.log('FormHandler.js', data);
     usersRegisteredData.push(data);
-    // const [d] = usersRegisteredData;
-    // console.log('UsersData', d);
+  };
+
+  const loginState = data => {
+    return data;
   };
 
   return (
     <div className="new-expense">
       <RegisterForm onSaveUsersData={savedRegisteredAccounts} />
-      <LoginForm />
+      <LoginForm loginState={loginState} adminData={props.adminAccount} />
     </div>
   );
 };

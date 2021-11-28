@@ -29,6 +29,7 @@ const RegisterForm = props => {
       name: name,
       email: email,
       password: password,
+      role: 'user',
     };
 
     allUsers.push(userData);
@@ -42,10 +43,6 @@ const RegisterForm = props => {
     }
 
     props.onSaveUsersData(allUsers);
-
-    // setName('');
-    // setEmail('');
-    // setPassword('');
   };
 
   return (
